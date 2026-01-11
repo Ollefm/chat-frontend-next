@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.ts";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+.dark {
+  --background: #0c0c0c;
+  --foreground: #ededed;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d4 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* Dark mode scrollbar */
+.dark * {
+  scrollbar-color: #525252 transparent;
+}
+
+.dark *::-webkit-scrollbar-thumb {
+  background: #525252;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #737373;
+}
